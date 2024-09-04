@@ -1,18 +1,11 @@
-import {
-  Text,
-  Button,
-  StyleSheet,
-  View,
-  TextInput,
-  Pressable,
-} from "react-native";
+import { Text, Button, StyleSheet, View, TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import React, { useState } from "react";
 import Feather from "@expo/vector-icons/Feather";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
-const SignInScreen = ({ navigation }) => {
+const SignUpScreen = ({ navigation }) => {
   const [text, onChangeText] = useState("");
   const [password, onChangePassword] = useState("");
   return (
@@ -47,7 +40,7 @@ const SignInScreen = ({ navigation }) => {
             marginBottom: 8,
           }}
         >
-          Log In
+          Create an account
         </Text>
 
         <Text
@@ -137,45 +130,42 @@ const SignInScreen = ({ navigation }) => {
         </View>
       </View>
 
-      <Pressable
-        onPress={() => {
-          navigation.replace("Main", { screen: "Home" });
+      <View
+        style={{
+          height: 40,
+          width: 188,
+          borderWidth: 2,
+          borderColor: "#FE7132",
+          backgroundColor: "#FF9363",
+          borderRadius: 24,
+          padding: 12,
+          marginTop: 24,
+          alignItems: "center",
+          justifyContent: "center",
+          shadowColor: "#FF4F00",
+          shadowOpacity: 1,
+          shadowRadius: 0,
+          shadowOffset: {
+            height: 2,
+            width: 2,
+          },
+          overflow: "visible",
         }}
       >
-        <View
+        <Text
           style={{
-            height: 40,
-            width: 188,
-            borderWidth: 2,
-            borderColor: "#FFA617",
-            backgroundColor: "#FFC466",
-            borderRadius: 24,
-            padding: 12,
-            marginTop: 24,
-            alignItems: "center",
-            justifyContent: "center",
-            shadowColor: "#D97700",
-            shadowOpacity: 1,
-            shadowRadius: 0,
-            shadowOffset: {
-              height: 2,
-              width: 2,
-            },
-            overflow: "visible",
+            fontFamily: "MontserratAlternates-Bold",
+            fontSize: 20,
+            color: "#ECECEC",
+            margin: -100,
+          }}
+          onPress={() => {
+            navigation.replace("Main", { screen: "Home" });
           }}
         >
-          <Text
-            style={{
-              fontFamily: "MontserratAlternates-Bold",
-              fontSize: 20,
-              color: "#ECECEC",
-              margin: -100,
-            }}
-          >
-            Log In
-          </Text>
-        </View>
-      </Pressable>
+          Sign Up
+        </Text>
+      </View>
       <View
         style={{
           height: 2,
@@ -280,26 +270,20 @@ const SignInScreen = ({ navigation }) => {
             color: "#353535",
           }}
         >
-          Haven’t have an account?
+          Already have account?
         </Text>
 
-        <Pressable
-          onPress={() => {
-            navigation.replace("Main", { screen: "SignUp" });
+        <Text
+          style={{
+            fontFamily: "MontserratAlternates-Bold",
+            fontSize: 16,
+            color: "#0929CF",
+            marginLeft: 4,
+            textDecorationLine: "underline",
           }}
         >
-          <Text
-            style={{
-              fontFamily: "MontserratAlternates-Bold",
-              fontSize: 16,
-              color: "#0929CF",
-              marginLeft: 4,
-              textDecorationLine: "underline",
-            }}
-          >
-            Sign Up
-          </Text>
-        </Pressable>
+          Log In
+        </Text>
       </View>
     </SafeAreaView>
   );
@@ -322,4 +306,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignInScreen;
+export default SignUpScreen;

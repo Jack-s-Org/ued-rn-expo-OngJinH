@@ -1,10 +1,13 @@
 import { StyleSheet, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import SwipeableCarouselHorizontalStack from "@/components/SwipeableCarousel/SwipeableCarouselHorizontalStack";
 
-const DiscoverScreen = () => {
+const RestaurantScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Discover</Text>
+      <Text></Text>
+
+      <SwipeableCarouselHorizontalStack></SwipeableCarouselHorizontalStack>
     </SafeAreaView>
   );
 };
@@ -18,4 +21,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DiscoverScreen;
+export default RestaurantScreen;

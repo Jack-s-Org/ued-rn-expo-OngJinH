@@ -36,7 +36,7 @@ export default function VideoPlayer() {
 
       <Pressable
         onPress={() => {
-          navigation.navigate("Main", { screen: "SignIn" });
+          navigation.navigate("Main", { screen: "Onboarding_3" });
         }}
       >
         <View

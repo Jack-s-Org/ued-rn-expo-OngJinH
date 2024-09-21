@@ -12,13 +12,13 @@ import Feather from "@expo/vector-icons/Feather";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { useNavigation } from "@react-navigation/native";
-import Gacha from "@/components/Gacha";
+import Map from "@/components/Map";
 
 const Onboarding_3Screen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View>
-        <Gacha></Gacha>
+        <Map></Map>
       </View>
     </View>
   );

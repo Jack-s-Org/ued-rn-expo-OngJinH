@@ -1,39 +1,56 @@
-import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  ScrollView,
+  Pressable,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import SwipeableCarouselHorizontalStack from "@/components/SwipeableCarousel/SwipeableCarouselHorizontalStack";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Feather from "@expo/vector-icons/Feather";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import { useNavigation } from "@react-navigation/native";
 
 const RestaurantScreen = () => {
+  const navigation = useNavigation();
   return (
     <ScrollView vertical={true}>
       <View style={styles.container}>
         <View style={{ marginTop: 48, flexDirection: "row" }}>
-          <View
-            style={{
-              width: 40,
-              height: 40,
-              borderWidth: 2,
-              borderColor: "#3E86EE",
-              backgroundColor: "#6A9CFD",
-              borderRadius: 24,
-              padding: 10,
-              margin: 16,
-              color: "#FFFFFF",
-              shadowColor: "#0060EB",
-              shadowOpacity: 1,
-              shadowRadius: 0,
-              shadowOffset: {
-                height: 2,
-                width: 2,
-              },
-              overflow: "visible",
+          <Pressable
+            onPress={() => {
+              navigation.navigate("MainTabs", { screen: "Home" });
             }}
           >
-            <AntDesign name="back" size={18} color="#ECECEC" />
-          </View>
+            <View
+              style={{
+                width: 40,
+                height: 40,
+                borderWidth: 2,
+                borderColor: "#3E86EE",
+                backgroundColor: "#6A9CFD",
+                borderRadius: 24,
+                padding: 10,
+                margin: 16,
+                color: "#FFFFFF",
+                shadowColor: "#0060EB",
+                shadowOpacity: 1,
+                shadowRadius: 0,
+                shadowOffset: {
+                  height: 2,
+                  width: 2,
+                },
+                overflow: "visible",
+              }}
+            >
+              <AntDesign name="back" size={18} color="#ECECEC" />
+            </View>
+          </Pressable>
           <View
             style={{
               width: 204,
@@ -62,6 +79,8 @@ const RestaurantScreen = () => {
                 style={{
                   height: 20,
                   width: 20,
+                  marginRight: 8,
+                  marginTop: -2,
                 }}
               />
               <Text
@@ -194,7 +213,7 @@ const RestaurantScreen = () => {
 
           <View
             style={{
-              height: 100,
+              height: 120,
               width: 338,
               borderWidth: 2,
               borderColor: "#6A9CFD",
@@ -215,9 +234,57 @@ const RestaurantScreen = () => {
               flexDirection: "row",
             }}
           >
-            <View style={styles.detailContainer}></View>
-            <View style={styles.detailContainer}></View>
-            <View style={styles.detailContainer}></View>
+            <View style={styles.detailContainer}>
+              <MaterialCommunityIcons
+                name="map-marker-distance"
+                size={24}
+                color="#353535"
+              />
+              <Text
+                style={{
+                  fontFamily: "MontserratAlternates-Regular",
+                  fontSize: 14,
+                  color: "#353535",
+                  marginTop: 4,
+                }}
+              >
+                5.9 km
+              </Text>
+            </View>
+            <View style={styles.detailContainer}>
+              <Ionicons name="pricetags-outline" size={22} color="#353535" />
+              <Text
+                style={{
+                  fontFamily: "MontserratAlternates-Regular",
+                  fontSize: 14,
+                  color: "#353535",
+                  marginTop: 4,
+                }}
+              >
+                RM12-RM50
+              </Text>
+            </View>
+            <View style={styles.detailContainer}>
+              <MaterialIcons name="more-time" size={24} color="#353535" />
+              <Text
+                style={{
+                  fontFamily: "MontserratAlternates-Regular",
+                  fontSize: 14,
+                  color: "#353535",
+                  marginTop: 4,
+                }}
+              >
+                8.00-
+              </Text>
+              <Text
+                style={{
+                  fontFamily: "MontserratAlternates-Regular",
+                  fontSize: 14,
+                }}
+              >
+                22.30
+              </Text>
+            </View>
           </View>
         </View>
 
@@ -237,40 +304,164 @@ const RestaurantScreen = () => {
           </View>
         </View>
 
-        <View>
-          <View
-            style={{
-              height: 220,
-              width: 172,
-              borderWidth: 2,
-              borderColor: "#FFA617",
-              backgroundColor: "#FFC466",
-              borderRadius: 24,
-              padding: 12,
-              margin: 16,
-              alignItems: "center",
-              justifyContent: "center",
-              shadowColor: "#E18A00",
-              shadowOpacity: 1,
-              shadowRadius: 0,
-              shadowOffset: {
-                height: 2,
-                width: 2,
-              },
-              overflow: "visible",
-            }}
-          >
-            <Image
-              source={require("@/assets/images/Menu/Nanyang-6.jpeg")}
-              style={{
-                height: 136,
-                width: 128,
-                borderRadius: 20,
-                marginTop: -24,
-              }}
-            />
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+          <View style={{ flexDirection: "row" }}>
+            {/* -------------Food 1----------------- */}
+            <View style={styles.menuContainer}>
+              <Image
+                source={require("@/assets/images/Menu/Nanyang-6.jpeg")}
+                style={{
+                  height: 136,
+                  width: 128,
+                  borderRadius: 20,
+                  marginTop: 4,
+                }}
+              />
+              <Text
+                style={{
+                  fontFamily: "MontserratAlternates-Regular",
+                  fontSize: 16,
+                  marginTop: 6,
+                }}
+              >
+                Nanyang Pork Burger with French Fries
+              </Text>
+              <Text
+                style={{
+                  fontFamily: "MontserratAlternates-Bold",
+                  fontSize: 20,
+                  marginTop: 6,
+                }}
+              >
+                RM20.90
+              </Text>
+            </View>
+
+            {/* -------------Food 2----------------- */}
+            <View style={styles.menuContainer}>
+              <Image
+                source={require("@/assets/images/Menu/Nanyang-7.jpeg")}
+                style={{
+                  height: 136,
+                  width: 128,
+                  borderRadius: 20,
+                  marginTop: 4,
+                }}
+              />
+              <Text
+                style={{
+                  fontFamily: "MontserratAlternates-Regular",
+                  fontSize: 16,
+                  marginTop: 6,
+                }}
+              >
+                Pineapple Bun with New Zealand Butter
+              </Text>
+              <Text
+                style={{
+                  fontFamily: "MontserratAlternates-Bold",
+                  fontSize: 20,
+                  marginTop: 6,
+                }}
+              >
+                RM6.90
+              </Text>
+            </View>
+
+            {/* -------------Food 3----------------- */}
+            <View style={styles.menuContainer}>
+              <Image
+                source={require("@/assets/images/Menu/Nanyang-8.jpeg")}
+                style={{
+                  height: 136,
+                  width: 128,
+                  borderRadius: 20,
+                  marginTop: 4,
+                }}
+              />
+              <Text
+                style={{
+                  fontFamily: "MontserratAlternates-Regular",
+                  fontSize: 16,
+                  marginTop: 6,
+                }}
+              >
+                Pork Chop with Curry Rice
+              </Text>
+              <Text
+                style={{
+                  fontFamily: "MontserratAlternates-Bold",
+                  fontSize: 20,
+                  marginTop: 6,
+                }}
+              >
+                RM22.90
+              </Text>
+            </View>
+
+            {/* -------------Food 4----------------- */}
+            <View style={styles.menuContainer}>
+              <Image
+                source={require("@/assets/images/Menu/Nanyang-9.jpeg")}
+                style={{
+                  height: 136,
+                  width: 128,
+                  borderRadius: 20,
+                  marginTop: 4,
+                }}
+              />
+              <Text
+                style={{
+                  fontFamily: "MontserratAlternates-Regular",
+                  fontSize: 16,
+                  marginTop: 6,
+                }}
+              >
+                Prawns & Wonton with Tossed Noodles
+              </Text>
+              <Text
+                style={{
+                  fontFamily: "MontserratAlternates-Bold",
+                  fontSize: 20,
+                  marginTop: 6,
+                }}
+              >
+                RM15.90
+              </Text>
+            </View>
+
+            {/* -------------Food 5----------------- */}
+            <View style={styles.menuContainer}>
+              <Image
+                source={require("@/assets/images/Menu/Nanyang-10.jpeg")}
+                style={{
+                  height: 136,
+                  width: 128,
+                  borderRadius: 20,
+                  marginTop: 4,
+                }}
+              />
+              <Text
+                style={{
+                  fontFamily: "MontserratAlternates-Regular",
+                  fontSize: 16,
+                  marginTop: 6,
+                }}
+              >
+                Double Eggs & Luncheon Meat Rice
+              </Text>
+              <Text
+                style={{
+                  fontFamily: "MontserratAlternates-Bold",
+                  fontSize: 20,
+                  marginTop: 6,
+                }}
+              >
+                RM18.90
+              </Text>
+            </View>
           </View>
-        </View>
+        </ScrollView>
 
         {/* ------Recommended Restaurant------ */}
         <View>
@@ -416,6 +607,46 @@ const RestaurantScreen = () => {
             <View style={styles.collectContainer}>
               <FontAwesome5 name="heart" size={18} color="#A5A5A5" />
             </View>
+
+            <Pressable
+              onPress={() => {
+                navigation.navigate("Main", { screen: "Map" });
+              }}
+            >
+              <View
+                style={{
+                  height: 40,
+                  width: 163,
+                  borderWidth: 2,
+                  borderColor: "#3E86EE",
+                  borderRadius: 24,
+                  position: "absolute",
+                  marginTop: 136,
+                  left: -240,
+                  backgroundColor: "#6A9CFD",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  shadowColor: "#0060EB",
+                  shadowOpacity: 1,
+                  shadowRadius: 0,
+                  shadowOffset: {
+                    height: 2,
+                    width: 2,
+                  },
+                  overflow: "visible",
+                }}
+              >
+                <Text
+                  style={{
+                    fontFamily: "MontserratAlternates-Bold",
+                    fontSize: 24,
+                    color: "#E4E4E4",
+                  }}
+                >
+                  Go Now
+                </Text>
+              </View>
+            </Pressable>
           </View>
         </View>
       </View>
@@ -433,12 +664,33 @@ const styles = StyleSheet.create({
   },
 
   detailContainer: {
-    height: 64,
+    height: 80,
     width: 80,
     borderWidth: 2,
     borderColor: "#FFA617",
     backgroundColor: "#FFC466",
     borderRadius: 20,
+    padding: 12,
+    margin: 16,
+    alignItems: "center",
+    justifyContent: "center",
+    shadowColor: "#E18A00",
+    shadowOpacity: 1,
+    shadowRadius: 0,
+    shadowOffset: {
+      height: 2,
+      width: 2,
+    },
+    overflow: "visible",
+  },
+
+  menuContainer: {
+    height: 260,
+    width: 172,
+    borderWidth: 2,
+    borderColor: "#FFA617",
+    backgroundColor: "#FFC466",
+    borderRadius: 24,
     padding: 12,
     margin: 16,
     alignItems: "center",

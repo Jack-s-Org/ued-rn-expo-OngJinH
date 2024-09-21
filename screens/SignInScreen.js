@@ -5,6 +5,7 @@ import {
   View,
   TextInput,
   Pressable,
+  Image,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import React, { useState } from "react";
@@ -17,6 +18,10 @@ const SignInScreen = ({ navigation }) => {
   const [password, onChangePassword] = useState("");
   return (
     <SafeAreaView style={styles.container}>
+      <Image
+        source={require("@/assets/images/Logo.png")}
+        style={{ height: 163, width: 271, marginBottom: 28 }}
+      />
       <View
         style={{
           height: 240,
@@ -139,7 +144,7 @@ const SignInScreen = ({ navigation }) => {
 
       <Pressable
         onPress={() => {
-          navigation.navigate("Main", { screen: "Home" });
+          navigation.navigate("MainTabs", { screen: "Home" });
         }}
       >
         <View

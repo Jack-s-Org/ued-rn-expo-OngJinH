@@ -14,7 +14,13 @@ import SettingsScreen from "./SettingsScreen";
 import AddScreen from "./AddScreen";
 import SignUpScreen from "./SignUpScreen";
 import SignInScreen from "./SignInScreen";
+import MoodAngryScreen from "./MoodAngryScreen";
+import MoodHappyScreen from "./MoodHappyScreen";
+import MoodSadScreen from "./MoodSadScreen";
+import MoodAfraidScreen from "./MoodAfraidScreen";
 import MoodChooseScreen from "./MoodChooseScreen";
+import FriendsGachaScreen from "./FriendsGachaScreen";
+import MapScreen from "./MapScreen";
 import Onboarding_1Screen from "./Onboarding_1Screen";
 import Onboarding_2Screen from "./Onboarding_2Screen";
 import Onboarding_3Screen from "./Onboarding_3Screen";
@@ -302,21 +308,21 @@ const MainScreens = () => {
         component={HomeScreen}
         options={{ animation: "fade_from_bottom" }}
       /> */}
-      <MainStacks.Screen
+      {/* <MainStacks.Screen
         name="Mood"
         component={MoodScreen}
         options={{ animation: "slide_from_right" }}
-      />
+      /> */}
       <MainStacks.Screen
         name="Settings"
         component={SettingsScreen}
         options={{ animation: "fade_from_bottom" }}
       />
-      <MainStacks.Screen
+      {/* <MainStacks.Screen
         name="Profile"
         component={ProfileScreen}
         options={{ animation: "fade_from_bottom" }}
-      />
+      /> */}
       <MainStacks.Screen
         name="SignUp"
         component={SignUpScreen}
@@ -327,15 +333,35 @@ const MainScreens = () => {
         component={SignInScreen}
         options={{ animation: "fade_from_bottom" }}
       />
-      <MainStacks.Screen
+      {/* <MainStacks.Screen
         name="Friends"
         component={FriendsScreen}
+        options={{ animation: "fade_from_bottom" }}
+      /> */}
+      <MainStacks.Screen
+        name="MoodAngry"
+        component={MoodAngryScreen}
+        options={{ animation: "fade_from_bottom" }}
+      />
+      <MainStacks.Screen
+        name="MoodHappy"
+        component={MoodHappyScreen}
+        options={{ animation: "fade_from_bottom" }}
+      />
+      <MainStacks.Screen
+        name="MoodSad"
+        component={MoodSadScreen}
+        options={{ animation: "fade_from_bottom" }}
+      />
+      <MainStacks.Screen
+        name="MoodAfraid"
+        component={MoodAfraidScreen}
         options={{ animation: "fade_from_bottom" }}
       />
       <MainStacks.Screen
         name="MoodChoose"
         component={MoodChooseScreen}
-        options={{ animation: "fade_from_bottom" }}
+        options={{ animation: "slide_from_bottom" }}
       />
       <MainStacks.Screen
         name="Onboarding_1"
@@ -355,6 +381,16 @@ const MainScreens = () => {
       <MainStacks.Screen
         name="Restaurant"
         component={RestaurantScreen}
+        options={{ animation: "fade_from_bottom" }}
+      />
+      <MainStacks.Screen
+        name="FriendsGacha"
+        component={FriendsGachaScreen}
+        options={{ animation: "fade_from_bottom" }}
+      />
+      <MainStacks.Screen
+        name="Map"
+        component={MapScreen}
         options={{ animation: "fade_from_bottom" }}
       />
     </MainStacks.Navigator>

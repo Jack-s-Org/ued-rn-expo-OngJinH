@@ -93,7 +93,7 @@ const MoodScreen = () => {
 
           <Pressable
             onPress={() => {
-              navigation.navigate("Main", { screen: "MoodChoose" });
+              navigation.navigate("Main", { screen: "MoodAngry" });
             }}
           >
             <View style={{ flexDirection: "row", marginTop: 8 }}>
@@ -129,48 +129,60 @@ const MoodScreen = () => {
         </View>
 
         {/* Nanyang Cafe */}
-        <View style={styles.restaurantContainer}>
-          <View style={{ flexDirection: "row" }}>
-            <Image
-              source={require("@/assets/images/MoodScreen/ProfileNanyang.png")}
-              style={{ height: 117, width: 130, marginRight: 112 }}
-            />
-            <View
-              style={{
-                height: 118,
-                width: 127,
-                marginLeft: -100,
-                marginTop: 2,
-              }}
-            >
-              <Text style={styles.restaurantText}>Nanyang Cafe</Text>
-
-              <View style={{ flexDirection: "row", marginTop: 8 }}>
-                <Text style={styles.ratingText}>4.8</Text>
-
-                <Image
-                  source={require("@/assets/images/4Stars.png")}
-                  style={{ height: 20, width: 87, marginLeft: 4 }}
-                />
-              </View>
-
+        <Pressable
+          onPress={() => {
+            navigation.navigate("Main", { screen: "Restaurant" });
+          }}
+        >
+          <View style={styles.restaurantContainer}>
+            <View style={{ flexDirection: "row" }}>
+              <Image
+                source={require("@/assets/images/MoodScreen/ProfileNanyang.png")}
+                style={{ height: 117, width: 130, marginRight: 112 }}
+              />
               <View
-                style={{ flexDirection: "row", marginTop: 8, marginLeft: -2 }}
+                style={{
+                  height: 118,
+                  width: 127,
+                  marginLeft: -100,
+                  marginTop: 2,
+                }}
               >
-                <Ionicons name="location-outline" size={18} color="#F7F7F7" />
-                <Text style={styles.locationText}>2.1 km</Text>
+                <Text style={styles.restaurantText}>Nanyang Cafe</Text>
+
+                <View style={{ flexDirection: "row", marginTop: 8 }}>
+                  <Text style={styles.ratingText}>4.8</Text>
+
+                  <Image
+                    source={require("@/assets/images/4Stars.png")}
+                    style={{ height: 20, width: 87, marginLeft: 4 }}
+                  />
+                </View>
+
+                <View
+                  style={{ flexDirection: "row", marginTop: 8, marginLeft: -2 }}
+                >
+                  <Ionicons name="location-outline" size={18} color="#F7F7F7" />
+                  <Text style={styles.locationText}>2.1 km</Text>
+                </View>
+
+                <Pressable
+                  onPress={() => {
+                    navigation.navigate("Main", { screen: "Map" });
+                  }}
+                >
+                  <View style={styles.goNowContainer}>
+                    <Text style={styles.goNowText}>Go now</Text>
+                  </View>
+                </Pressable>
               </View>
 
-              <View style={styles.goNowContainer}>
-                <Text style={styles.goNowText}>Go now</Text>
+              <View style={styles.collectContainer}>
+                <FontAwesome5 name="heart" size={18} color="#A5A5A5" />
               </View>
-            </View>
-
-            <View style={styles.collectContainer}>
-              <FontAwesome5 name="heart" size={18} color="#A5A5A5" />
             </View>
           </View>
-        </View>
+        </Pressable>
 
         {/* Paradise Dynasty */}
         <View style={styles.restaurantContainer}>

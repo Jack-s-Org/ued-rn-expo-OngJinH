@@ -1,4 +1,11 @@
-import { Text, Button, StyleSheet, View, TextInput } from "react-native";
+import {
+  Text,
+  Button,
+  StyleSheet,
+  View,
+  TextInput,
+  Pressable,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import React, { useState } from "react";
 import Feather from "@expo/vector-icons/Feather";
@@ -130,42 +137,45 @@ const SignUpScreen = ({ navigation }) => {
         </View>
       </View>
 
-      <View
-        style={{
-          height: 40,
-          width: 188,
-          borderWidth: 2,
-          borderColor: "#FE7132",
-          backgroundColor: "#FF9363",
-          borderRadius: 24,
-          padding: 12,
-          marginTop: 24,
-          alignItems: "center",
-          justifyContent: "center",
-          shadowColor: "#FF4F00",
-          shadowOpacity: 1,
-          shadowRadius: 0,
-          shadowOffset: {
-            height: 2,
-            width: 2,
-          },
-          overflow: "visible",
+      <Pressable
+        onPress={() => {
+          navigation.navigate("Main", { screen: "Home" });
         }}
       >
-        <Text
+        <View
           style={{
-            fontFamily: "MontserratAlternates-Bold",
-            fontSize: 20,
-            color: "#ECECEC",
-            margin: -100,
-          }}
-          onPress={() => {
-            navigation.replace("Main", { screen: "Home" });
+            height: 40,
+            width: 188,
+            borderWidth: 2,
+            borderColor: "#FE7132",
+            backgroundColor: "#FF9363",
+            borderRadius: 24,
+            padding: 12,
+            marginTop: 24,
+            alignItems: "center",
+            justifyContent: "center",
+            shadowColor: "#FF4F00",
+            shadowOpacity: 1,
+            shadowRadius: 0,
+            shadowOffset: {
+              height: 2,
+              width: 2,
+            },
+            overflow: "visible",
           }}
         >
-          Sign Up
-        </Text>
-      </View>
+          <Text
+            style={{
+              fontFamily: "MontserratAlternates-Bold",
+              fontSize: 20,
+              color: "#ECECEC",
+              margin: -100,
+            }}
+          >
+            Sign Up
+          </Text>
+        </View>
+      </Pressable>
       <View
         style={{
           height: 2,
@@ -273,17 +283,23 @@ const SignUpScreen = ({ navigation }) => {
           Already have account?
         </Text>
 
-        <Text
-          style={{
-            fontFamily: "MontserratAlternates-Bold",
-            fontSize: 16,
-            color: "#0929CF",
-            marginLeft: 4,
-            textDecorationLine: "underline",
+        <Pressable
+          onPress={() => {
+            navigation.navigate("Main", { screen: "SignIn" });
           }}
         >
-          Log In
-        </Text>
+          <Text
+            style={{
+              fontFamily: "MontserratAlternates-Bold",
+              fontSize: 16,
+              color: "#0929CF",
+              marginLeft: 4,
+              textDecorationLine: "underline",
+            }}
+          >
+            Log In
+          </Text>
+        </Pressable>
       </View>
     </SafeAreaView>
   );

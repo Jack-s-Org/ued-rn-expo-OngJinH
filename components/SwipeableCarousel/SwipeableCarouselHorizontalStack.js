@@ -2,18 +2,37 @@ import * as React from "react";
 import Carousel from "react-native-reanimated-carousel";
 
 import Slide from "./Slide";
-import { View } from "react-native";
+import { View, Image } from "react-native";
 import { useSharedValue } from "react-native-reanimated";
 import Dots from "./Dots";
 
 const height = 240;
 
 const data = [
-  <Slide index={0} backgroundColor="red" />,
-  <Slide index={1} backgroundColor="orange" />,
-  <Slide index={2} backgroundColor="yellow" />,
-  <Slide index={3} backgroundColor="green" />,
-  <Slide index={4} backgroundColor="blue" />,
+  <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <Image
+      source={require("@/assets/images/RestaurantPic/Nanyang_R1.png")}
+      style={{ height: 184, width: 193 }}
+    />
+  </View>,
+  <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <Image
+      source={require("@/assets/images/RestaurantPic/Nanyang_R2.png")}
+      style={{ height: 184, width: 193 }}
+    />
+  </View>,
+  <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <Image
+      source={require("@/assets/images/RestaurantPic/Nanyang_R3.png")}
+      style={{ height: 184, width: 193 }}
+    />
+  </View>,
+  <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <Image
+      source={require("@/assets/images/RestaurantPic/Nanyang_R4.png")}
+      style={{ height: 184, width: 193 }}
+    />
+  </View>,
 ];
 
 function SwipeableCarouselHorizontalStack() {
@@ -33,7 +52,7 @@ function SwipeableCarouselHorizontalStack() {
             alignItems: "center",
             justifyContent: "center",
           }}
-          loop={false}
+          loop={true}
           mode="horizontal-stack"
           modeConfig={{
             stackInterval: 18,
@@ -48,9 +67,9 @@ function SwipeableCarouselHorizontalStack() {
         />
       </View>
 
-      <View style={{ marginTop: 16 }}>
+      {/* <View style={{ marginTop: 16 }}>
         <Dots data={data} currentIndex={index} />
-      </View>
+      </View> */}
     </View>
   );
 }

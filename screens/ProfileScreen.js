@@ -143,6 +143,21 @@ const ProfileScreen = () => {
           </View>
         </View>
 
+        <Text
+          style={{
+            fontFamily: "MontserratAlternates-Bold",
+            fontSize: 20,
+            color: "#353535",
+            margin: 20,
+            marginLeft: 20,
+            marginTop: 8,
+          }}
+        >
+          Recently Visited
+        </Text>
+
+        <View></View>
+
         <View style={{ margin: 20, marginLeft: 20 }}>
           <Text
             style={{
@@ -367,7 +382,7 @@ const ProfileScreen = () => {
         <View style={{ height: 120 }}>
           <Pressable
             onPress={() => {
-              navigation.replace("Main", { screen: "SignIn" });
+              navigation.navigate("Main", { screen: "SignIn" });
             }}
           >
             <Text

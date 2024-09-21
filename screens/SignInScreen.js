@@ -139,7 +139,7 @@ const SignInScreen = ({ navigation }) => {
 
       <Pressable
         onPress={() => {
-          navigation.replace("Main", { screen: "Home" });
+          navigation.navigate("Main", { screen: "Home" });
         }}
       >
         <View

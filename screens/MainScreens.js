@@ -15,9 +15,13 @@ import AddScreen from "./AddScreen";
 import SignUpScreen from "./SignUpScreen";
 import SignInScreen from "./SignInScreen";
 import MoodChooseScreen from "./MoodChooseScreen";
+import Onboarding_1Screen from "./Onboarding_1Screen";
+import Onboarding_2Screen from "./Onboarding_2Screen";
+import Onboarding_3Screen from "./Onboarding_3Screen";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import Feather from "@expo/vector-icons/Feather";
+import RestaurantScreen from "./RestaurantScreen";
 
 const MainStacks = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -35,8 +39,8 @@ const MainTabs = ({ navigation }) => {
         tabBarStyle: {
           position: "absolute",
           bottom: 30,
-          left: 20,
-          right: 20,
+          left: 30,
+          right: 30,
           borderRadius: 28,
           borderColor: "#3E86EE",
           height: 60,
@@ -128,7 +132,11 @@ const MainTabs = ({ navigation }) => {
                   alignItems: "center",
                 }}
               >
-                <Ionicons name="people-outline" size={24} color="#E4E4E4" />
+                <Ionicons
+                  name="people-outline"
+                  size={24}
+                  color={focused ? "#353535" : "#E4E4E4"}
+                />
                 <Text
                   style={{
                     fontSize: 12,
@@ -177,7 +185,7 @@ const MainTabs = ({ navigation }) => {
                 <MaterialCommunityIcons
                   name="sticker-emoji"
                   size={24}
-                  color="#E4E4E4"
+                  color={focused ? "#353535" : "#E4E4E4"}
                 />
                 <Text
                   style={{
@@ -224,7 +232,11 @@ const MainTabs = ({ navigation }) => {
                   alignItems: "center",
                 }}
               >
-                <Feather name="user" size={24} color="#E4E4E4" />
+                <Feather
+                  name="user"
+                  size={24}
+                  color={focused ? "#353535" : "#E4E4E4"}
+                />
                 <Text
                   style={{
                     fontSize: 12,
@@ -323,6 +335,26 @@ const MainScreens = () => {
       <MainStacks.Screen
         name="MoodChoose"
         component={MoodChooseScreen}
+        options={{ animation: "fade_from_bottom" }}
+      />
+      <MainStacks.Screen
+        name="Onboarding_1"
+        component={Onboarding_1Screen}
+        options={{ animation: "fade_from_bottom" }}
+      />
+      <MainStacks.Screen
+        name="Onboarding_2"
+        component={Onboarding_2Screen}
+        options={{ animation: "fade_from_bottom" }}
+      />
+      <MainStacks.Screen
+        name="Onboarding_3"
+        component={Onboarding_3Screen}
+        options={{ animation: "fade_from_bottom" }}
+      />
+      <MainStacks.Screen
+        name="Restaurant"
+        component={RestaurantScreen}
         options={{ animation: "fade_from_bottom" }}
       />
     </MainStacks.Navigator>

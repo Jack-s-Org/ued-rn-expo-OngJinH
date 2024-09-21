@@ -17,8 +17,9 @@ export default function App() {
   const [fontsLoaded] = useFonts({
     IcoMoon: require("@/assets/icomoon/icomoon.ttf"),
     "MontserratAlternates-Bold": require("@/assets/fonts/MontserratAlternates-Bold.ttf"),
-    "MontserratAlternates-Regular": require("@/assets/fonts/MontserratAlternates-Regular.ttf"),
     "MontserratAlternates-SemiBold": require("@/assets/fonts/MontserratAlternates-SemiBold.ttf"),
+    "MontserratAlternates-Regular": require("@/assets/fonts/MontserratAlternates-Regular.ttf"),
+    "MontserratAlternates-Medium": require("@/assets/fonts/MontserratAlternates-Medium.ttf"),
     // "FontFamilyName": require("@/yourfile"),
   });
 

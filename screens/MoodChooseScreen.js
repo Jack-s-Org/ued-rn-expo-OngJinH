@@ -17,7 +17,7 @@ const MoodChooseScreen = () => {
       <View>
         <Pressable
           onPress={() => {
-            navigation.replace("Main", { screen: "Home" });
+            navigation.goBack();
           }}
         >
           <Image
